@@ -29,5 +29,4 @@ def fetch_delivery(symbol, start_date, end_date):
   print(target_url)
   response = session.get(target_url, headers=headers)
   data = response.json()
-  print("...............", response)
   return data

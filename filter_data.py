@@ -24,8 +24,8 @@ def filterDeliveryData(data):
   total_delivery_qty = sum(d['COP_DELIV_QTY'] for d in final_data) / 5
   total_volume_qty = sum(d['CH_TOT_TRADED_QTY'] for d in final_data) / 5
 
-  delivery_time = total_delivery_qty / current_data['COP_DELIV_QTY']
-  volume_time = total_volume_qty / current_data['CH_TOT_TRADED_QTY']
+  delivery_time = current_data['COP_DELIV_QTY'] / total_delivery_qty
+  volume_time = current_data['CH_TOT_TRADED_QTY'] / total_volume_qty
 
   result = {'open': open_price, 'close': close_price, 'high': high_price, 'low': low_price,
   'trades': trades, 'traded_qty': traded_qty, 'delivery_perc': delivery_perc,
