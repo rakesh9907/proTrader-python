@@ -25,7 +25,7 @@ def fetch_nse_data():
 
 def fetch_delivery(symbol, start_date, end_date):
   session = fetch_nse_data()
-  target_url = f'https://www.nseindia.com/api/historical/securityArchives?from={start_date.strip("'\" ")}&to={end_date.strip("'\" ")}&symbol={symbol}&dataType=priceVolumeDeliverable&series=ALL'
+  target_url = f"https://www.nseindia.com/api/historical/securityArchives?from={start_date.strip('\"')}&to={end_date.strip('\"')}&symbol={symbol}&dataType=priceVolumeDeliverable&series=ALL"
   print(target_url)
   response = session.get(target_url, headers=headers)
   data = response.json()
