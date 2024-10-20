@@ -16,8 +16,8 @@ def stockDelivery(symbol):
 
 @app.route('/')
 def home():
-    return "Hello, Flask!"
+  return "Hello, Flask!"
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+  app.run()
