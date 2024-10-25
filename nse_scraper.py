@@ -17,7 +17,7 @@ head = {
 
 def fetch_nse_data():
   session = requests.Session()
-  response = session.get(nse_url, headers=head, timeout=30)
+  response = session.get(nse_url, headers=head, timeout=60)
 
   if response.status_code == 200:
     print("Successfully retrieved response from NSE")
@@ -30,7 +30,7 @@ def fetch_nse_data():
 def fetch_delivery(symbol, start_date, end_date):
   session, cookies, header = fetch_nse_data()
   target_url = f'https://www.nseindia.com/api/historical/securityArchives?from={start_date}&to={end_date}&symbol={symbol}&dataType=priceVolumeDeliverable&series=ALL'
-  response = session.get(target_url, headers=head, cookies=cookies, timeout=30)
+  response = session.get(target_url, headers=head, cookies=cookies, timeout=60)
   data = response.json()
   return data
 
